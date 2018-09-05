@@ -1,0 +1,8 @@
+<Context>
+    <Environment name="webapp.config.file"
+                 value="overrides.conf"
+                 type="java.lang.String"
+                 override="false"
+                 description="Pointer to a Typesafe Config file outside the WAR that contains overrides."
+    />
+</Context>

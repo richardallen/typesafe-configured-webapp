@@ -1,0 +1,15 @@
+.banner {
+  width: 600px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+
+.banner > span {
+  font-family: sans-serif;
+  font-size: 62pt;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}

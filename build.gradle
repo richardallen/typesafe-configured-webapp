@@ -1,0 +1,30 @@
+plugins {
+    id 'idea'
+}
+
+group = 'rich'
+version = '1.0.0'
+
+task runApp(type: GradleBuild) {
+    group 'application'
+    description 'Builds and runs the webapp without creating the WAR. Stop with CTRL+C'
+    setTasks([':demo-ui:npmUpdate', ':demo-ui:clean', ':demo-ui:buildProd', ':demo-webapp:appRun'])
+}
+
+task runAppDebug(type: GradleBuild) {
+    group 'application'
+    description 'Builds and runs the webapp without creating the WAR. Suspends listening for debugger on port 5005. Stop with CTRL+C'
+    setTasks([':demo-ui:npmUpdate', ':demo-ui:clean', ':demo-ui:buildProd', ':demo-webapp:appRunDebug'])
+}
+
+task runWar(type: GradleBuild) {
+    group 'application'
+    description 'Builds the WAR and runs the webapp. Stop with CTRL+C'
+    setTasks([':demo-ui:npmUpdate', ':demo-ui:clean', ':demo-ui:buildProd', ':demo-webapp:appRunWar'])
+}
+
+task runWarDebug(type: GradleBuild) {
+    group 'application'
+    description 'Builds the WAR and runs the webapp. Suspends listening for debugger on port 5005. Stop with CTRL+C'
+    setTasks([':demo-ui:npmUpdate', ':demo-ui:clean', ':demo-ui:buildProd', ':demo-webapp:appRunWarDebug'])
+}

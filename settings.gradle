@@ -1,0 +1,4 @@
+rootProject.name = 'typesafe-configured-webapp'
+include 'demo-ui',
+        'demo-webapp'
+enableFeaturePreview('IMPROVED_POM_SUPPORT')

@@ -1,0 +1,46 @@
+# Temporary output from Gradle
+build/
+nodejs/
+npm/
+node_modules/
+generated-sources/
+buildSrc/
+.gradle/
+tomcat.*/
+
+# Intellij IDEA files
+*.iml
+*.ipr
+*.iws
+.idea
+out/
+
+# Eclipse files
+.cproject
+.classpath
+.wtpmodules
+.project
+.checkstyle
+.settings/
+.externalToolBuilders/
+maven-eclipse.xml
+
+# Mac OS
+.DS_Store
+
+# Libraries and temporary files from editors
+*.o
+*.lo
+*.la
+\#*#
+.*.rej
+*.rej
+.*~
+*~
+.#*
+*.swp
+*.log
+
+#Java heap dump files
+java_pid*.hprof
+

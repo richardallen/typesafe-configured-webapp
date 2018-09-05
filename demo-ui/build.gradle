@@ -1,0 +1,54 @@
+plugins {
+    id 'com.moowork.node' version '1.2.0'
+    id 'idea'
+}
+
+node {
+    version = '10.8.0'
+    npmVersion = '6.3.0'
+    download = true
+    workDir = file("${project.buildDir}/nodejs")
+    npmWorkDir = file("${project.buildDir}/npm")
+    nodeModulesDir = file("${project.projectDir}")
+}
+
+task clean(type: Delete) {
+    group 'build ui'
+    delete "${project.projectDir}/dist"
+}
+
+task cleanNpm(type: Delete) {
+    group 'build ui'
+    dependsOn 'clean'
+    delete "${project.buildDir}", "${project.projectDir}/node_modules"
+}
+
+task npmUpdate {
+    group 'build ui'
+    dependsOn 'npm_update'
+}
+
+task buildDev(type: NpmTask, dependsOn: npmInstall) {
+    group 'build ui'
+    description = 'Compiles the UI for development'
+    args = ['run', 'buildDev']
+}
+
+task buildProd(type: NpmTask, dependsOn: npmInstall) {
+    group 'build ui'
+    description = 'Compiles the UI for development'
+    args = ['run', 'buildProd']
+}
+
+task serve(type: NpmTask, dependsOn: npmInstall) {
+    group 'build ui'
+    description = 'Builds and serves the UI for development'
+    args = ['start']
+}
+
+task watch(type: NpmTask, dependsOn: npmInstall) {
+    group 'build ui'
+    description = 'Builds and serves the UI, plus watches for changes'
+    args = ['run', 'watch']
+}
+
